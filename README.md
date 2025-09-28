@@ -9,9 +9,12 @@ Understanding the neuronal firing-rate patterns of the brain poses a significant
 
 Let's dive in into some concepts using physics jargon.
 
-´We began by analyzing the dynamics (behaviour over time) of each neuron's firing-rate (how "active" it is), and found, that chaotic dynamics yields the highest computuaional power (how complex the problems are, which a RNN can solve)
+´We began by analyzing the dynamics (behaviour over time) of each neuron's firing-rate (how "active" it is), and found, that chaotic dynamics yields the highest computational power (how complex the problems are, which a RNN can solve)
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/4970e261-344f-4819-bd55-e0c626b607e9" alt="firing rate dynamics" width="70%"/>
+  <img src="https://github.com/user-attachments/assets/4970e261-344f-4819-bd55-e0c626b607e9" 
+       alt="firing rate dynamics" 
+       width="70%" 
+       height="70%"/>
 </p>
 
 We proceeded by visualising firing-rate trajectories in Principal Component-space (the space, in which the most important parts of the firing rate dynamics can be seen), to obtain valuable insights on how our RNN its given problem.
