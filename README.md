@@ -52,14 +52,17 @@ We proceeded by visualising firing-rate trajectories in Principal Component-spac
   (c) Entire trajectory. Blue, green and red represent r(t) during the input-dominated and intrinsic phases. Cyan, magenta and olive are used once the curves enter the memory-period or plateau-phase, and are labelled as "memory".</em>
 </p>
 
+
+## **2.3 Conclusion**
+
 Ultimately, we attempted at consolidating our findings. We proposed an analytical solution for how our RNN is able to solve integration- and memory behaviours observed in neuroscience.
+
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/0fd80836-9122-48cb-9384-c56797fff4b9" alt="equation1" width="60%">
-  <br>
 </p>
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5a379490-cd11-4441-87a3-8ca2f309c4ce" alt="equation2" width="60%">
-  <br>
+  <em>Figure 4: (top) Basic structure of our propsed equation. (bottom) Determining each component. </em>
 </p>
