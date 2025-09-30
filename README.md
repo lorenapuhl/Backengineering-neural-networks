@@ -2,7 +2,7 @@
 Master's thesis in neurophysics at ENS, Paris
 
 
-**1. Motivation**
+#**1. Motivation**
 
 
 Understanding the neuronal firing-rate patterns of the brain poses a significant challenge. An increasingly popular approach involves simulating experimental observations using artificial recurrent neural networks, which are more convenient and share key characteristics with their biological counterparts. We train recurrent neural networks (RNNs) on biological integration and memory tasks, which refer to the brain's ability to accumulate incoming signals over time (integration) and to retain that information (memory). By reverse-engineering our trained RNNs, we analyze the network's structure and dynamics to uncover underlying principles. Understanding the network's dynamical solutions found by training may provide feasible hypotheses for the working mechanisms of the brain.
@@ -10,12 +10,13 @@ Understanding the neuronal firing-rate patterns of the brain poses a significant
 <p align="center">
   <img src="https://github.com/user-attachments/assets/45b3f5d8-692c-4bbf-af47-5ac4bb128696" alt="brain" height="250" style="margin-right:10px;">
   <img src="https://github.com/user-attachments/assets/54c92a1e-f4bf-4d6c-9990-5ef206f5dea7" alt="RNN" height="250">
+  <em>Figure 1: (left) Measuring the brain's electrical signals. (right) Simulating the brain's electrical signals using a Recurrent Neural Network. It consists of input-weights through $\mathbf{I}$ feeding signals to the recurrent net $\mathbf{G}$. The output is read out using the weights $\mathbf{W}$</em>
 </p>
 
-**2. Project Overview**
+#**2. Project Overview**
 
 
-**2.1 Training a RNN**
+##**2.1 Training a RNN**
 
 
 Let's very briefly dive into some of our project's proceedings using minimal physics jargon.
@@ -30,7 +31,7 @@ We began by training a series of recurrent neural networks (RNNs) to address the
   <img src="https://github.com/user-attachments/assets/7ec6c884-6606-47d7-8007-6c99829af0c0" alt="network output" width="70%">
 </p>
 
-**2.2 Reverse-Engineering and Analysis**
+##**2.2 Reverse-Engineering and Analysis**
 
 We proceeded by visualising firing-rate trajectories in Principal Component-space (the space, in which the most important parts of the firing rate dynamics can be seen), to obtain valuable insights on how our RNN its given problem. We found, that input-signals of different durations lead to parallel firing-rate trajectories (the path the dynamics traces in PC-space), while their separating distances were correlated to the according signal-times. We therefore hypothesized, that integration relied on measuring the denoted distances. On the other hand, we suggested that output-weights were fine-tuned to rule out the remaining firing-rate dynamics, in order to output a plateau.
 
