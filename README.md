@@ -16,18 +16,21 @@ Ultimately, we attempted at consolidating our findings, by proposing an analytic
 
 **2. Project Overview**
 
+**2.1 Training a RNN**
+
 Let's very briefly dive in into our project's proceedings using minimal physics jargon.
 
 We began by training a series of recurrent neural networks (RNNs) to address the biological integration and memory problem. In this task, the network receives constant input signals of varying durations. To succeed, the RNN must measure for how long the input was active (integration) and represent this information through a sustained output signal (memory). The amplitude (signal height) of the output encodes the duration of the corresponding input. Training consisted of adjusting both the input and output weights of the network.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/dd046449-28e1-4981-9afa-4f1fd1488707" alt="data set" width="70%">
+  <img src="https://github.com/user-attachments/assets/22ca8b96-d2f7-4dbe-af2f-ddc66c82608b" alt="data set" width="70%">
 </p>
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1b4627bf-66a8-4bcd-801f-f8311c06e4d4" alt="network output" width="70%">
+  <img src="https://github.com/user-attachments/assets/7ec6c884-6606-47d7-8007-6c99829af0c0" alt="network output" width="70%">
 </p>
 
+**2.2 Revere-Engineering and Analysis**
 
 ´We began by analyzing the dynamics (behaviour over time) of each neuron's firing-rate (how "active" it is), and found, that chaotic dynamics yields the highest computational power (how complex the problems are, which a RNN can solve). Investigating the RNN's dynamics using linear analysis (approximating the dynamics into simpler terms) helped us confirm these insights.
 
