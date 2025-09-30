@@ -10,7 +10,7 @@ Understanding the neuronal firing-rate patterns of the brain poses a significant
 <p align="center">
   <img src="https://github.com/user-attachments/assets/45b3f5d8-692c-4bbf-af47-5ac4bb128696" alt="brain" height="250" style="margin-right:10px;">
   <img src="https://github.com/user-attachments/assets/54c92a1e-f4bf-4d6c-9990-5ef206f5dea7" alt="RNN" height="250">
-  <em>Figure 1: (left) Measuring the brain's electrical signals. (right) Simulating the brain's electrical signals using a Recurrent Neural Network. It consists of input-weights through I feeding signals to the recurrent net G. The output is read out using the weights W</em>
+  <em>Figure 1: (left) Measuring the brain's electrical signals. (right) Simulating the brain's electrical signals using a Recurrent Neural Network. It consists of input-weights I feeding signals to the recurrent net G. The output is read out using the weights W</em>
 </p>
 
 # **2. Project Overview**
@@ -29,6 +29,7 @@ We began by training a series of recurrent neural networks (RNNs) to address the
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/7ec6c884-6606-47d7-8007-6c99829af0c0" alt="network output" width="70%">
+  <em>Figure 2: (top) Data set featuring integration and memory patterns. The figure illutrates input-signals of different durationa. The according output is a constant signal encoding the according input-duration through its height. (bottom) An RNN's typical output after having been trained on such a data-set.</em>
 </p>
 
 ## **2.2 Reverse-Engineering and Analysis**
