@@ -10,7 +10,6 @@ Understanding the neuronal firing-rate patterns of the brain poses a significant
   <img src="https://github.com/user-attachments/assets/54c92a1e-f4bf-4d6c-9990-5ef206f5dea7" alt="RNN" height="250">
 </p>
 
-We found, that input-signals of different durations lead to parallel firing-rate trajectories, while their separating distances were correlated to the according signal-times. We therefore hypothesized, that integration relied on measuring the denoted distances. On the other hand, we suggested that output-weights were fine-tuned to rule out the remaining firing-rate dynamics, in order to output a plateau.
 
 Ultimately, we attempted at consolidating our findings, by proposing an analytical solution for the output-weights. We correlated our results with trained output-weights to estimate their accuracy. While we did not obtain a satisfying value, the standard deviation of our results was comparably small. We concluded, that while our analytical expression was not exact, it still captured certain systematic aspects of our RNN’s integration- and memory-mechanisms.
 
@@ -18,7 +17,7 @@ Ultimately, we attempted at consolidating our findings, by proposing an analytic
 
 **2.1 Training a RNN**
 
-Let's very briefly dive in into our project's proceedings using minimal physics jargon.
+Let's very briefly dive into some of our project's proceedings using minimal physics jargon.
 
 We began by training a series of recurrent neural networks (RNNs) to address the biological integration and memory problem. In this task, the network receives constant input signals of varying durations. To succeed, the RNN must measure for how long the input was active (integration) and represent this information through a sustained output signal (memory). The amplitude (signal height) of the output encodes the duration of the corresponding input. Training consisted of adjusting both the input and output weights of the network.
 
@@ -41,7 +40,8 @@ We began by training a series of recurrent neural networks (RNNs) to address the
        height="50%"/>
 </p>
 
-We proceeded by visualising firing-rate trajectories in Principal Component-space (the space, in which the most important parts of the firing rate dynamics can be seen), to obtain valuable insights on how our RNN its given problem.
+We proceeded by visualising firing-rate trajectories in Principal Component-space (the space, in which the most important parts of the firing rate dynamics can be seen), to obtain valuable insights on how our RNN its given problem. We found, that input-signals of different durations lead to parallel firing-rate trajectories (the path the dynamics traces in PC-space), while their separating distances were correlated to the according signal-times. We therefore hypothesized, that integration relied on measuring the denoted distances. On the other hand, we suggested that output-weights were fine-tuned to rule out the remaining firing-rate dynamics, in order to output a plateau.
+
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/467b5ae7-b3d3-4a1c-97ce-d3d2beb9503c" 
@@ -51,3 +51,14 @@ We proceeded by visualising firing-rate trajectories in Principal Component-spac
 </p>
 
 Ultimately, we attempted at consolidating our findings. We proposed an analytical solution for how our RNN is able to solve integration- and memory behaviours observed in neuroscience.
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/0fd80836-9122-48cb-9384-c56797fff4b9" alt="equation1" width="60%">
+  <br>
+  <em>Figure 1: Equation 1</em>
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5a379490-cd11-4441-87a3-8ca2f309c4ce" alt="equation2" width="60%">
+  <br>
+  <em>Figure 2: Equation 2</em>
+</p>
