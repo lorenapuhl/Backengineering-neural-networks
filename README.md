@@ -24,9 +24,15 @@ Let's very briefly dive into some of our project's proceedings using minimal phy
 We began by training a series of recurrent neural networks (RNNs) to address the biological integration and memory problem. In this task, the network receives constant input signals of varying durations. To succeed, the RNN must measure for how long the input was active (integration) and represent this information through a sustained output signal (memory). The amplitude (signal height) of the output encodes the duration of the corresponding input. Training consisted of adjusting both the input and output weights of the network.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/22ca8b96-d2f7-4dbe-af2f-ddc66c82608b" alt="data set" width="65%">
-  <img src="https://github.com/user-attachments/assets/7ec6c884-6606-47d7-8007-6c99829af0c0" alt="network output" width="65%">
-  <em>Figure 2: (top) Data-set featuring integration and memory patterns. The figure illutrates input-signals of different durations. The according target-output is a constant signal encoding the according input-duration through its height. (bottom) An RNN's typical output after having been trained on such a data-set.</em>
+  <img src="https://github.com/user-attachments/assets/22ca8b96-d2f7-4dbe-af2f-ddc66c82608b" alt="data set" width="70%">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7ec6c884-6606-47d7-8007-6c99829af0c0" alt="network output" width="70%">
+</p>
+
+<p align="center">
+  <em>Figure 2: (top) Data-set featuring integration and memory patterns. The figure illustrates input-signals of different durations. The according target-output is a constant signal encoding the according input-duration through its height. (bottom) An RNN's typical output after having been trained on such a data-set.</em>
 </p>
 
 ## **2.2 Reverse-Engineering and Analysis**
