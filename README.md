@@ -1,6 +1,8 @@
 # Backengineering-neural-networks
 Master's thesis in neurophysics at ENS, Paris
 
+
+**1. Motivation**
 Understanding the neuronal firing-rate patterns of the brain poses a significant challenge. An increasingly popular approach involves simulating experimental observations using artificial recurrent neural networks, which are more convenient and share key characteristics with their biological counterparts. We train recurrent neural networks (RNNs) on biological integration and memory tasks, which refer to the brain's ability to accumulate incoming signals over time (integration) and to retain that information (memory). By reverse-engineering our trained RNNs, we analyze the network's structure and dynamics to uncover underlying principles. Understanding the network's dynamical solutions found by training may provide feasible hypotheses for the working mechanisms of the brain.
 
 <p align="center">
@@ -8,9 +10,26 @@ Understanding the neuronal firing-rate patterns of the brain poses a significant
   <img src="https://github.com/user-attachments/assets/54c92a1e-f4bf-4d6c-9990-5ef206f5dea7" alt="RNN" height="250">
 </p>
 
-Let's very briefly dive in into some concepts using physics jargon.
+We found, that input-signals of different durations lead to parallel firing-rate trajectories, while their separating distances were correlated to the according signal-times. We therefore hypothesized, that integration relied on measuring the denoted distances. On the other hand, we suggested that output-weights were fine-tuned to rule out the remaining firing-rate dynamics, in order to output a plateau.
 
-´We began by analyzing the dynamics (behaviour over time) of each neuron's firing-rate (how "active" it is), and found, that chaotic dynamics yields the highest computational power (how complex the problems are, which a RNN can solve)
+Ultimately, we attempted at consolidating our findings, by proposing an analytical solution for the output-weights. We correlated our results with trained output-weights to estimate their accuracy. While we did not obtain a satisfying value, the standard deviation of our results was comparably small. We concluded, that while our analytical expression was not exact, it still captured certain systematic aspects of our RNN’s integration- and memory-mechanisms.
+
+**2. Project Overview**
+
+Let's very briefly dive in into our project's proceedings using minimal physics jargon.
+
+We began by training a series of recurrent neural networks (RNNs) to address the biological integration and memory problem. In this task, the network receives constant input signals of varying durations. To succeed, the RNN must measure for how long the input was active (integration) and represent this information through a sustained output signal (memory). The amplitude (signal height) of the output encodes the duration of the corresponding input. Training consisted of adjusting both the input and output weights of the network.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/dd046449-28e1-4981-9afa-4f1fd1488707" alt="data set" width="70%">
+</p>
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1b4627bf-66a8-4bcd-801f-f8311c06e4d4" alt="network output" width="70%">
+</p>
+
+
+´We began by analyzing the dynamics (behaviour over time) of each neuron's firing-rate (how "active" it is), and found, that chaotic dynamics yields the highest computational power (how complex the problems are, which a RNN can solve). Investigating the RNN's dynamics using linear analysis (approximating the dynamics into simpler terms) helped us confirm these insights.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/4970e261-344f-4819-bd55-e0c626b607e9" 
