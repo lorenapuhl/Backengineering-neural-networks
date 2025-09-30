@@ -37,7 +37,7 @@ We began by training a series of recurrent neural networks (RNNs) to address the
 
 ## **2.2 Reverse-Engineering and Analysis**
 
-We proceeded by visualising firing-rate trajectories in Principal Component-space (the space, in which the most important parts of the firing rate dynamics can be seen), to obtain valuable insights on how our RNN its given problem. We found, that input-signals of different durations lead to parallel firing-rate trajectories (the path the dynamics traces in PC-space), while their separating distances were correlated to the according signal-times. We therefore hypothesized, that integration relied on measuring the denoted distances. On the other hand, we suggested that output-weights were fine-tuned to rule out the remaining firing-rate dynamics, in order to output a plateau.
+We proceeded by visualising firing-rate trajectories in Principal Component-space (the space, in which the most important parts of the firing rate dynamics can be seen), to obtain valuable insights on how our RNN solves its given problem. We found, that input-signals of different durations lead to parallel firing-rate trajectories (the path the dynamics traces in PC-space), while their separating distances were correlated to the according signal-times. We therefore hypothesized, that integration relied on measuring the denoted distances. On the other hand, we suggested that output-weights were fine-tuned to rule out the remaining firing-rate dynamics, in order to output a plateau.
 
 
 <p align="center">
@@ -45,6 +45,7 @@ We proceeded by visualising firing-rate trajectories in Principal Component-spac
        alt="trajectories" 
        width="75%" 
        height="75%"/>
+    <em>Figure 3:Three different trajectories r(t) for inputs of durations 50ms (blue and cyan), 150ms (green and olive) and 300ms (red and magenta) in Principal Component Space. (a) Time-frame where the input is turned on. The input-weights I are illustrated using a vector-arrow. (b) Intrinsic phase, where the network processes the input before enetering plateau-phase. The latter denotes the time-frame where the network exhibits a plateau-like output to mimick memory behaviour. (c) Entire trajectory. Blue, green and red represent r(t) during the input-dominated and intrinsic phases. Cyan, magenta and olive are used once the curves enter the memory-period or plateau-phase.</em>
 </p>
 
 Ultimately, we attempted at consolidating our findings. We proposed an analytical solution for how our RNN is able to solve integration- and memory behaviours observed in neuroscience.
