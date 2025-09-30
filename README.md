@@ -35,23 +35,14 @@ We began by training a series of recurrent neural networks (RNNs) to address the
 
 **2.2 Reverse-Engineering and Analysis**
 
-´We began by analyzing the dynamics (behaviour over time) of each neuron's firing-rate (how "active" it is), and found, that chaotic dynamics yields the highest computational power (how complex the problems are, which a RNN can solve). Investigating the RNN's dynamics using linear analysis (approximating the dynamics into simpler terms) helped us confirm these insights.
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/4970e261-344f-4819-bd55-e0c626b607e9" 
-       alt="firing rate dynamics" 
-       width="40%" 
-       height="40%"/>
-</p>
-
 We proceeded by visualising firing-rate trajectories in Principal Component-space (the space, in which the most important parts of the firing rate dynamics can be seen), to obtain valuable insights on how our RNN its given problem. We found, that input-signals of different durations lead to parallel firing-rate trajectories (the path the dynamics traces in PC-space), while their separating distances were correlated to the according signal-times. We therefore hypothesized, that integration relied on measuring the denoted distances. On the other hand, we suggested that output-weights were fine-tuned to rule out the remaining firing-rate dynamics, in order to output a plateau.
 
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/467b5ae7-b3d3-4a1c-97ce-d3d2beb9503c" 
        alt="trajectories" 
-       width="70%" 
-       height="70%"/>
+       width="75%" 
+       height="75%"/>
 </p>
 
 Ultimately, we attempted at consolidating our findings. We proposed an analytical solution for how our RNN is able to solve integration- and memory behaviours observed in neuroscience.
