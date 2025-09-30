@@ -64,5 +64,8 @@ Ultimately, we attempted at consolidating our findings. We proposed an analytica
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5a379490-cd11-4441-87a3-8ca2f309c4ce" alt="equation2" width="60%">
-  <em>Figure 4: (top) Basic structure of our propsed equation. (bottom) Determining each component. </em>
+</p>
+
+<p align="center">
+  <em>Figure 4: (top) Basic structure of our proposed equation. (bottom) Determining each component.</em>
 </p>
