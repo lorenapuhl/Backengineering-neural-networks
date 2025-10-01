@@ -9,9 +9,9 @@ Understanding the neuronal firing-rate patterns of the brain poses a significant
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/45b3f5d8-692c-4bbf-af47-5ac4bb128696" 
-       alt="brain" height="250", width = "300", style="margin-right:20px;">
+       alt="brain" height="250" width = "400", style="margin-right:20px;">
   <img src="https://github.com/user-attachments/assets/54c92a1e-f4bf-4d6c-9990-5ef206f5dea7" 
-       alt="RNN" height="250", width = "300">
+       alt="RNN" height="250" width = "400">
 </p>
 
 <p align="center">
