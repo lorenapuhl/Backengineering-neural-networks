@@ -6,6 +6,12 @@ The analysis focuses on measuring the network’s precision in performing the in
 
 One hypothesis is that the network leverages specific dynamical axes —*Principal Components*— to carry out the task. If this is the case, then the *participation ratios* (which quantify the alignment between $\mathbf{I}$ and $\mathbf{W}$ and the identified axes) should correlate with task performance. Another possibility is that the solution relies on fine-tuned interactions between input and output weights—that is, a *correlation* between them. If so, plotting these properties against network performance should reveal characteristic patterns.
 
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5ec6fa8d-5bbb-4a3b-bcda-cfd13e1f04d8" alt="pca" width="50%">
+</p>
+<p align="center">
+  <em>Figure 1: Schematic understanding of Principal Component Analysis (PCA). The figure shows the axes (or directions) of highest movement, knwon as Principal Components. (Figure from https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html) </em>
+</p>
 
 ---
 
