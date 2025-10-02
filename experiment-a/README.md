@@ -20,10 +20,10 @@ One hypothesis is that the network leverages specific dynamical axes —*Princip
 
 This project trains RNNs (Model A) to perform integration and memory tasks by training both input weights (**I**) and output weights (**W**). The implementation trains 20 independent models to enable statistical analysis of the learned dynamical solutions.
 
-The analysis investigates how trained networks solve integration and memory problems by examining:
-- **Network precision** in task performance
-- **Dynamical axes** (Principal Components) used by the network
-- **Participation ratios** measuring alignment between weights and identified axes
+The analysis investigates how trained networks solve integration and memory problems by:
+- Evaluating **Network precision** in task performance
+- Determining the **Dynamical axes** (Principal Components) used of the network dynamics in its spontaneous state and memory state
+- Calculating **Participation ratios** between weights and identified axes
 - **Weight correlations** between input and output weights
 
 ## Requirements
@@ -105,15 +105,16 @@ For each trained model, two plots are generated:
 - `sys_A{seed}_err.png`: Loss history during training
 - `sys_A{seed}_param.png`: Gradient magnitudes for trainable parameters during training
 
-Sample training plots for representative models are available in `results/training/`.
+Sample training plots for representative models are available in [`results/training/`](https://github.com/lorenapuhl/Backengineering-neural-networks/tree/main/experiment-a/results/training)
+.
 
 ### Analysis Outputs
-- **Performance analysis plot** (`sys_A_performance.png`): Scatter plot showing relationships between task precision and:
+- **Performance analysis plot** ([`sys_A_performance.png`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/sys_A_performance.png)): Scatter plot showing relationships between task precision and:
   - Weight correlation (blue): Alignment between input and output weights
   - Input participation ratio (green): How input weights align with spontaneous activity PCs
   - Output participation ratio (red): How output weights align with memory period PCs
 
-This plot is located in `results/performance/` and provides insights into which architectural features correlate with better task performance.
+This plot is located in [`results/performance/`](https://github.com/lorenapuhl/Backengineering-neural-networks/tree/main/experiment-a/results/performance) and provides insights into which architectural features correlate with better task performance. The conclusions are describend in [`performance-analysis.md`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/performance-analysis.md)
 
 ## Key Functions (from utils)
 
@@ -226,19 +227,4 @@ The script includes functionality to load and analyze specific models:
 ```python
 saved_model = f"sys_A{seed}"  # Load model with specific seed
 ```
-
-## Research Questions
-
-This implementation helps investigate:
-
-1. Do networks leverage specific dynamical axes (Principal Components) to solve the task?
-2. Do participation ratios correlate with task performance?
-3. Are fine-tuned interactions between input and output weights critical for the solution?
-4. What patterns emerge when plotting weight properties against network performance?
-
-## Notes
-
-- Initial hidden state (h0) is set to zero by default
-- The threshold parameter increases at a rate of 0.007
-- Training and analysis can be toggled independently via `train` and `ana` flags
 
