@@ -49,8 +49,5 @@ train = 1  # Enable training mode
 ## Statistical Analysis
 
 For 20 independent models:
-- Mean precision: $MSE-Loss = 0.0194$
+- Mean precision: MSE-Loss $= 0.0194$
 - Standard deviation: $\sigma = 0.009$
-
-See [`performance/performance_analysis.md`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/performance-analysis.md) for detailed statistical analysis.
-
