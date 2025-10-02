@@ -18,11 +18,13 @@ One hypothesis is that the network leverages specific dynamical axes —*Princip
 
 ## Overview
 
-- Train an RNN on inputs of different durations to perform integration and memory tasks.  
-- Evaluate the network's precision in solving the task
-- Test whether task performance is linked to:  
-  - **Participation ratios**: alignment of input (`I`) and output (`W`) weights with the principal axes.  
-  - **Weight correlations**: fine-tuning between input and output weights.
+This project trains RNNs (Model A) to perform integration and memory tasks by training both input weights (**I**) and output weights (**W**). The implementation trains 20 independent models to enable statistical analysis of the learned dynamical solutions.
+
+The analysis investigates how trained networks solve integration and memory problems by examining:
+- **Network precision** in task performance
+- **Dynamical axes** (Principal Components) used by the network
+- **Participation ratios** measuring alignment between weights and identified axes
+- **Weight correlations** between input and output weights
 
 ## Requirements
 
@@ -30,7 +32,7 @@ One hypothesis is that the network leverages specific dynamical axes —*Princip
 - PyTorch
 - NumPy
 - Matplotlib
-- utils.py
+- SYS_A_modules (custom module - must be in the same directory)
 
 ## Network Architecture
 
@@ -67,7 +69,7 @@ Set `train = 1` in the script to train 20 independent models with different rand
 train = 1  # Enable training
 ```
 
-This will train models with seeds 1-21 and save them as `sys_A{seed}_state.pth`.
+This will train models with seeds 1-99 and save them as `sys_A{seed}_state.pth`.
 
 ### Analysis
 
@@ -94,14 +96,24 @@ The analysis evaluates networks on three signal durations:
 ## Output
 
 ### Saved Models
-- Model states saved as: `sys_A{seed}_state.pth`
+Model states are saved as: `sys_A{seed}_state.pth`
 
-### Analysis Plots
-- **Performance analysis plot**: `sys_A_performance.png`
-  - Shows relationships between precision and:
-    - Weight correlation (blue)
-    - Input participation ratio (green)
-    - Output participation ratio (red)
+**Note:** Due to file size constraints, only 1-2 representative trained models are included in the `models/` directory. To reproduce all 20 models, run the training script with `train = 1`.
+
+### Training Outputs
+For each trained model, two plots are generated:
+- `sys_A{seed}_err.png`: Loss history during training
+- `sys_A{seed}_param.png`: Gradient magnitudes for trainable parameters during training
+
+Sample training plots for representative models are available in `results/training/`.
+
+### Analysis Outputs
+- **Performance analysis plot** (`sys_A_performance.png`): Scatter plot showing relationships between task precision and:
+  - Weight correlation (blue): Alignment between input and output weights
+  - Input participation ratio (green): How input weights align with spontaneous activity PCs
+  - Output participation ratio (red): How output weights align with memory period PCs
+
+This plot is located in `results/performance/` and provides insights into which architectural features correlate with better task performance.
 
 ## Key Functions (from SYS_A_modules)
 
