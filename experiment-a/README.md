@@ -5,7 +5,7 @@ This project trains a recurrent neural network (RNN) to solve a biological integ
 
 The analysis focuses on measuring the network’s precision in performing the integration and memory tasks. Beyond evaluating performance, we also attempt a first step toward reverse-engineering the network’s learned solution. In other words: according to which principles does the trained network solve the integration and memory problem?
 
-One hypothesis is that the network leverages specific dynamical axes —*Principal Components*— to carry out the task. If this is the case, then the *participation ratios* (which quantify the alignment between $\mathbf{I}$ and $\mathbf{W}$ and the identified axes) should correlate with task performance. Another possibility is that the solution relies on fine-tuned interactions between input and output weights—that is, a *correlation* between them. If so, plotting these properties against network performance should reveal characteristic patterns.
+One hypothesis is that the network leverages specific dynamical axes —*Principal Components*— to carry out the task. If this is the case, then the *participation ratios* (which quantify the alignment between the weights and the identified axes) should correlate with task performance. Another possibility is that the solution relies on fine-tuned interactions between input and output weights—that is, a *correlation* between them. If so, plotting these properties against network performance should reveal characteristic patterns.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/5ec6fa8d-5bbb-4a3b-bcda-cfd13e1f04d8" alt="pca" width="50%">
@@ -98,7 +98,7 @@ The analysis evaluates networks on three signal durations:
 ### Saved Models
 Model states are saved as: `sys_A{seed}_state.pth`
 
-**Note:** Due to file size constraints, only 1-2 representative trained models are included in the `models/` directory. To reproduce all 20 models, run the training script with `train = 1`.
+**Note:** Due to file size constraints, only 1-2 representative trained models are included in the [`models/`](https://github.com/lorenapuhl/Backengineering-neural-networks/tree/main/experiment-a/models) directory. To reproduce all 20 models, run the training script with `train = 1`.
 
 ### Training Outputs
 For each trained model, two plots are generated:
