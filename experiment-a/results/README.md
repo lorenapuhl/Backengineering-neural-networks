@@ -14,6 +14,14 @@ Contains training diagnostics for selected representative models:
 - `sys_A{seed}_err.png`: Loss (MSE) history during training
 - `sys_A{seed}_param.png`: Gradient magnitude history for trainable parameters
 
+### `model_results.txt`
+For each of the trained models `sys_A{seed}`for seeds 1 to 20, the files coontains the numerical values for:
+
+- **Precision**: MSE-Loss between network output and target function
+- **Weight correlation** between trained input-weights $\mathbf{I}$ and $\mathbf{W}$
+- **I-participation ratio**: Participation ratios of weights $\mathbf{I}$ with the Principal Component axes of the intrinsic network dynamics
+- **w-participation ratio**: Participation ratios of weights $\mathbf{W}$ with the Principal Component axes of the network dynamics during memory (phase, during which the output features a plateau)
+
 ## Generating Results
 
 ### Performance Analysis
