@@ -35,7 +35,7 @@ To train all 20 models from scratch:
 
 ```python
 import torch
-from SYS_A_modules import Net1
+from utils import Net1
 
 # Network parameters
 net_pack = (tau, dt, input_size, output_size, hidden_size, g_G, seed, h0)
