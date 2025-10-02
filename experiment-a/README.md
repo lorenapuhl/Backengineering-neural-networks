@@ -7,13 +7,6 @@ The analysis focuses on measuring the network’s precision in performing the in
 
 One hypothesis is that the network leverages specific dynamical axes —*Principal Components*— to carry out the task. If this is the case, then the *participation ratios* (which quantify the alignment between the weights and the identified axes) should correlate with task performance. Another possibility is that the solution relies on fine-tuned interactions between input and output weights—that is, a *correlation* between them. If so, plotting these properties against network performance should reveal characteristic patterns.
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/5ec6fa8d-5bbb-4a3b-bcda-cfd13e1f04d8" alt="pca" width="50%">
-</p>
-<p align="center">
-  <em>Figure 1: Schematic understanding of Principal Component Analysis (PCA). The figure shows the axes (or directions) of highest movement, knwon as Principal Components. (Figure from https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html) </em>
-</p>
-
 ---
 
 ## Overview
@@ -22,9 +15,17 @@ This project trains RNNs (Model A) to perform integration and memory tasks by tr
 
 The analysis investigates how trained networks solve integration and memory problems by:
 - Evaluating **Network precision** in task performance
-- Determining the **Dynamical axes** (Principal Components) used of the network dynamics in its spontaneous state and memory state
+- Determining the **Dynamical axes** (Principal Components) used of the network dynamics in its spontaneous state and its memory state
 - Calculating **Participation ratios** between weights and identified axes
 - **Weight correlations** between input and output weights
+
+  <p align="center">
+  <img src="https://github.com/user-attachments/assets/5ec6fa8d-5bbb-4a3b-bcda-cfd13e1f04d8" alt="pca" width="50%">
+</p>
+<p align="center">
+  <em>Figure 1: Schematic understanding of Principal Component Analysis (PCA). The figure shows the axes (or directions) of highest movement, knwon as Principal Components. (Figure from https://jakevdp.github.io/PythonDataScienceHandbook/05.09-principal-component-analysis.html) </em>
+</p>
+
 
 ## Requirements
 
