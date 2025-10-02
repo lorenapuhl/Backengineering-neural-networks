@@ -32,7 +32,7 @@ The analysis investigates how trained networks solve integration and memory prob
 - PyTorch
 - NumPy
 - Matplotlib
-- SYS_A_modules (custom module - must be in the same directory)
+- utils (custom module - must be in the same directory)
 
 ## Network Architecture
 
@@ -115,7 +115,7 @@ Sample training plots for representative models are available in `results/traini
 
 This plot is located in `results/performance/` and provides insights into which architectural features correlate with better task performance.
 
-## Key Functions (from SYS_A_modules)
+## Key Functions (from utils)
 
 ### Core Classes
 
@@ -241,12 +241,4 @@ This implementation helps investigate:
 - Initial hidden state (h0) is set to zero by default
 - The threshold parameter increases at a rate of 0.007
 - Training and analysis can be toggled independently via `train` and `ana` flags
-
-## License
-
-[Add your license information here]
-
-## Citation
-
-[Add citation information if applicable]
 
