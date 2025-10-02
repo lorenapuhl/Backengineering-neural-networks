@@ -41,10 +41,6 @@ train = 1  # Enable training mode
   - **Green points**: Input participation ratio (alignment with spontaneous activity PCs)
   - **Red points**: Output participation ratio (alignment with memory period PCs)
 
-Look for:
-- Linear trends indicating correlation between features and performance
-- Clusters suggesting discrete solution strategies
-- Outliers representing unique solutions
 
 ### Training Curves
 - **Loss plot**: Should show monotonic decrease; plateaus indicate convergence
@@ -53,9 +49,8 @@ Look for:
 ## Statistical Analysis
 
 For 20 independent models:
-- Mean precision: [to be computed]
-- Standard deviation: [to be computed]
-- Correlation coefficients between features and performance: [to be computed]
+- Mean precision: $MSE-Loss = 0.0194$
+- Standard deviation: $\sigma = 0.009$
 
-See `performance/performance_analysis.md` for detailed statistical analysis.
+See [`performance/performance_analysis.md`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/performance-analysis.md) for detailed statistical analysis.
 
