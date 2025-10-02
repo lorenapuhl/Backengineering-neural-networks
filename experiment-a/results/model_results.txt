@@ -1,0 +1,120 @@
+
+model sys_A1
+precision = 0.01618705317378044
+weight-correlation = 0.8806139230728149
+I-participation ratio = 329.4220367172441
+w-participation ratio = 323.19202089795004
+
+model sys_A2
+precision = 0.03527102246880531
+weight-correlation = 0.8195869326591492
+I-participation ratio = 322.48509478747286
+w-participation ratio = 324.83138667161234
+
+model sys_A3
+precision = 0.027739448472857475
+weight-correlation = 0.8717653751373291
+I-participation ratio = 307.676989165136
+w-participation ratio = 313.988712838141
+
+model sys_A4
+precision = 0.020262429490685463
+weight-correlation = 0.8245766162872314
+I-participation ratio = 329.18243622349814
+w-participation ratio = 316.3188816374493
+
+model sys_A5
+precision = 0.027645304799079895
+weight-correlation = 0.8557652831077576
+I-participation ratio = 319.9607040090135
+w-participation ratio = 316.2501729452557
+
+model sys_A6
+precision = 0.018774323165416718
+weight-correlation = 0.8707939386367798
+I-participation ratio = 319.35624454339626
+w-participation ratio = 322.3317550410281
+
+model sys_A7
+precision = 0.0420658253133297
+weight-correlation = 0.8746927380561829
+I-participation ratio = 341.9376342521244
+w-participation ratio = 308.79765218391117
+
+model sys_A8
+precision = 0.019620215520262718
+weight-correlation = 0.8453483581542969
+I-participation ratio = 330.65236299013054
+w-participation ratio = 320.3345551613771
+
+model sys_A9
+precision = 0.01164268795400858
+weight-correlation = 0.8841519355773926
+I-participation ratio = 325.89797752934777
+w-participation ratio = 313.5135766578559
+
+model sys_A10
+precision = 0.017870502546429634
+weight-correlation = 0.8732897639274597
+I-participation ratio = 323.00751533975114
+w-participation ratio = 326.63662265859745
+
+model sys_A11
+precision = 0.038918036967515945
+weight-correlation = 0.8955285549163818
+I-participation ratio = 317.304839971445
+w-participation ratio = 330.3314313325837
+
+model sys_A12
+precision = 0.017353275790810585
+weight-correlation = 0.84600430727005
+I-participation ratio = 320.0385910293999
+w-participation ratio = 314.8462322927629
+
+model sys_A13
+precision = 0.023049237206578255
+weight-correlation = 0.8228853344917297
+I-participation ratio = 305.6020203636987
+w-participation ratio = 330.6604823507661
+
+model sys_A14
+precision = 0.03293601796030998
+weight-correlation = 0.8465717434883118
+I-participation ratio = 323.3125297989282
+w-participation ratio = 310.9388785069881
+
+model sys_A15
+precision = 0.031241556629538536
+weight-correlation = 0.8816086649894714
+I-participation ratio = 312.49127661251856
+w-participation ratio = 328.82568445705186
+
+model sys_A16
+precision = 0.030984938144683838
+weight-correlation = 0.8700829744338989
+I-participation ratio = 321.1933797158779
+w-participation ratio = 317.5401571960405
+
+model sys_A17
+precision = 0.02053670398890972
+weight-correlation = 0.8170987963676453
+I-participation ratio = 316.9873412820108
+w-participation ratio = 307.0149664930423
+
+model sys_A18
+precision = 0.020016508176922798
+weight-correlation = 0.8741697669029236
+I-participation ratio = 327.81964445730887
+w-participation ratio = 306.69267397680653
+
+model sys_A19
+precision = 0.019809802994132042
+weight-correlation = 0.8841356039047241
+I-participation ratio = 330.4838718324192
+w-participation ratio = 309.1219324881023
+
+model sys_A20
+precision = 0.028430117294192314
+weight-correlation = 0.872648298740387
+I-participation ratio = 318.11523839414355
+w-participation ratio = 310.7233660510173
