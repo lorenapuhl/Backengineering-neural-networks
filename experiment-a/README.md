@@ -1,4 +1,4 @@
-# RNN Memory Dynamics – System A 
+# Experiment A - Analysing weight correlations and principal component participation ratios 
 ## Motivation
 
 This project trains a recurrent neural network (RNN) to solve a biological integration and memory task with inputs of varying durations. Model A is implemented by training both the input weights $\mathbf{I}$ and the output weights $\mathbf{W}$. To enable statistical analysis of the resulting dynamical solutions, a set of twenty independent models are trained.
