@@ -105,12 +105,107 @@ The analysis evaluates networks on three signal durations:
 
 ## Key Functions (from SYS_A_modules)
 
-- `Net1()`: RNN model class
-- `evaluate()`: Evaluates network performance
-- `precision()`: Measures task precision
-- `weight_correlation()`: Computes correlation between input and output weights
-- `I_partic_ratio()`: Calculates participation ratio for input weights
-- `w_partic_ratio()`: Calculates participation ratio for output weights
+### Core Classes
+
+#### `Net1(tau, dt, input_size, output_size, hidden_size, g_G, seed, h0)`
+Recurrent Neural Network model class implementing a continuous-time RNN.
+
+**Parameters:**
+- `tau`: Time constant (ms)
+- `dt`: Time step size (ms)
+- `input_size`: Number of input dimensions
+- `output_size`: Number of output dimensions
+- `hidden_size`: Number of hidden neurons
+- `g_G`: Connection strength parameter
+- `seed`: Random seed for weight initialization
+- `h0`: If True, initializes hidden state to zero; otherwise random initialization
+
+**Key Methods:**
+- `forward(input, return_dynamics=False, return_frdynamics=False)`: Simulates network forward pass
+  - Returns output signal
+  - Optionally returns hidden state dynamics (`return_dynamics=True`)
+  - Optionally returns firing rate dynamics (`return_frdynamics=True`)
+- `train(...)`: Trains the network using Adam optimizer with custom MSE loss
+
+**Network Architecture:**
+- **Weights:**
+  - `G`: Recurrent connectivity matrix (fixed, not trained)
+  - `I`: Input weights (trainable)
+  - `w`: Output weights (trainable)
+  - `h0`: Initial hidden state (fixed)
+- **Dynamics:** `h(t+dt) = h(t) + (dt/tau) * (-h(t) + g_G * tanh(h(t)) @ G.T + input @ I.T)`
+- **Output:** `output = tanh(h) @ w`
+
+### Loss Functions
+
+#### `mse_loss1(output, target)`
+Custom MSE loss with masked evaluation. Only computes loss where target ≠ -1 (evaluation period).
+
+#### `mse_loss2(output, target)`
+Custom MSE loss for precision calculation. Only computes loss where target > 0.
+
+### Data Generation
+
+#### `data1(net, trials, Nt, O_on, SO_on, O_off, SO_off, thresh, perc, cost_onset, sig)`
+Generates training/testing datasets with variable signal timing.
+
+**Returns:**
+- `inputt`: Input signal tensor (trials × Nt × input_size)
+- `targett`: Target output tensor (trials × Nt × output_size)
+  - Contains -1 during non-evaluation periods
+  - Contains threshold value during evaluation period
+
+### Analysis Functions
+
+#### `evaluate(net, dur_list, trials_test, ..., sig_onset)`
+Visualizes network performance across different input durations. Plots network output, target, and input signals.
+
+#### `precision(net, dur_list, trials_test, ..., sig_onset)`
+Measures task precision by computing average MSE loss across different signal durations.
+
+**Returns:** Mean precision score (lower is better)
+
+#### `weight_correlation(net)`
+Computes normalized correlation between input weights **I** and output weights **w**.
+
+**Formula:** `correlation = (I · w) / (|I| * |w|)`
+
+**Returns:** Correlation coefficient [-1, 1]
+
+#### `signals(net, O_on, Nt, input_len, thresh, cost_onset, sig)`
+Generates firing rate trajectories and network output for a single trial.
+
+**Returns:**
+- `r_time`: Firing rate trajectories (Nt × hidden_size)
+- `output`: Network output signal (Nt,)
+
+#### `pca_matrix(net, t1, t2, r, plot=False)`
+Computes PCA on firing rate covariance matrix over specified time window.
+
+**Returns:**
+- `e_val`: Eigenvalues of covariance matrix
+- `e_vec`: Eigenvectors (principal components)
+
+#### `pca_trials(net, plot=False)`
+Performs PCA by averaging covariance matrices across three trials with different input durations (50, 150, 300 ms).
+
+**Returns:**
+- `e_val`: Averaged eigenvalues
+- `e_vec`: Averaged eigenvectors
+
+#### `I_partic_ratio(net, ...)`
+Calculates participation ratio of input weight vector **I** onto PCA eigenvectors from spontaneous activity.
+
+**Formula:** `PR = (Σ cᵢ)² / Σ cᵢ²` where `cᵢ = eigenvector_i · I`
+
+**Returns:** Participation ratio (higher values indicate alignment with fewer principal components)
+
+#### `w_partic_ratio(net, ...)`
+Calculates participation ratio of output weight vector **w** onto PCA eigenvectors during the memory period.
+
+**Formula:** `PR = (Σ cᵢ)² / Σ cᵢ²` where `cᵢ = eigenvector_i · w`
+
+**Returns:** Participation ratio
 
 ## Model Selection
 
@@ -135,3 +230,10 @@ This implementation helps investigate:
 - The threshold parameter increases at a rate of 0.007
 - Training and analysis can be toggled independently via `train` and `ana` flags
 
+## License
+
+[Add your license information here]
+
+## Citation
+
+[Add citation information if applicable]
