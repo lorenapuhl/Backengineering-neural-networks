@@ -68,15 +68,6 @@ The scatter plot [`sys_A_performance.png`](https://github.com/lorenapuhl/Backeng
 - Output weights show similar high-dimensional structure across all networks
 - As we will understand later in this tesis, the dynamical solution for solving the biological integration and memory relies on picking certain principal axes, which are crucial for interpreting input durations and achieving a plateau-shaped output. The weight distributions on the remaining principal axes is less significant.
 
-## Statistical Summary
-
-### Performance Distribution
-- **Mean precision**: ~0.025
-- **Best model**: ~0.013 (lowest MSE)
-- **Worst model**: ~0.042 (highest MSE)
-- **Range**: ~3.2× difference between best and worst
-
-
 ## Conclusions
 
 None of the measured architectural features (weight correlation, I-participation ratio, or W-participation ratio) show meaningful correlation with individual task performance. Thus, performance variation must arise from factors not measured here. 
