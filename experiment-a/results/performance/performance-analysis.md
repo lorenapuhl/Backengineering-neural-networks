@@ -4,7 +4,7 @@ This document provides detailed analysis of the relationship between network arc
 
 ## Overview
 
-The scatter plot [`sys_A_performance.png`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/sys_A_performance.png) shows three architectural features plotted against task precision for all 20 trained models (seeds 1-20). Each model was trained with identical hyperparameters but different random initializations.
+The scatter plot [`sys_A_performance.png`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/sys_A_performance.png) shows three architectural features plotted against task precision for all 20 trained models (seeds 1-20). Each model was trained with identical hyperparameters but different random initializations. [`sys_A_performance_zoom1.png`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/sys_A_performance_zoom1.png) and [`sys_A_performance_zoom2.png`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/sys_A_performance_zoom2.png) show the features with higher resolution
 
 ## Metrics Analyzed
 
@@ -16,22 +16,25 @@ The scatter plot [`sys_A_performance.png`](https://github.com/lorenapuhl/Backeng
 ### Y-Axis: Architectural Features
 
 #### 1. Weight Correlation (Blue Points)
+([`sys_A_performance_zoom2.png`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/sys_A_performance_zoom2.png))
 - **Definition**: Normalized correlation between input weights **I** and output weights **W**
 - **Formula**: correlation = (**I** · **W**) / (|**I**| × |**W**|)
 - **Range**: ~0.82 to ~0.89
 - **Interpretation**: Measures alignment between how information enters the network and how it's read out
 
 #### 2. I-Participation Ratio (Green Points)
+([`sys_A_performance_zoom1.png`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/sys_A_performance_zoom1.png))
 - **Definition**: Participation ratio of input weights **I** onto principal components of spontaneous activity
 - **Formula**: PR = (Σ cᵢ)² / Σ cᵢ², where cᵢ = eigenvector_i · **I**
 - **Range**: ~305 to ~342
-- **Interpretation**: Higher values indicate input weights align with fewer principal components; lower values indicate distributed representation
+- **Interpretation**: If all eigenvalues contribute equally (i.e., cᵢ/Σⱼ₌₁ᴺ cⱼ = 1/N), the dimension estimate is PR = N. Conversely, if only one eigenvalue contributes, then PR = 1. Thus,  Values between 1 and N indicate the effective number of dimensions used by the system
 
 #### 3. W-Participation Ratio (Red Points)
+([`sys_A_performance_zoom1.png`](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/experiment-a/results/performance/sys_A_performance_zoom1.png))
 - **Definition**: Participation ratio of output weights **W** onto principal components during memory period
 - **Formula**: PR = (Σ cᵢ)² / Σ cᵢ², where cᵢ = eigenvector_i · **W**
 - **Range**: ~307 to ~331
-- **Interpretation**: Higher values indicate output weights preferentially read from fewer principal components
+- **Interpretation**: If all eigenvalues contribute equally (i.e., cᵢ/Σⱼ₌₁ᴺ cⱼ = 1/N), the dimension estimate is PR = N. Conversely, if only one eigenvalue contributes, then PR = 1. Thus,  Values between 1 and N indicate the effective number of dimensions used by the system
 
 ## Key Findings
 
@@ -40,36 +43,32 @@ The scatter plot [`sys_A_performance.png`](https://github.com/lorenapuhl/Backeng
 **Observation**: Blue points (weight correlation) cluster tightly near zero across the entire performance range (~0.82-0.89), with no discernible trend.
 
 **Interpretation**: 
-- Weight correlation shows **no correlation** with task performance
+- Weight correlation shows **no correlation** with individual task performance
 - All networks converge to similar correlation values regardless of quality
-- The hypothesis that fine-tuned **I**-**W** correlation determines performance is **not supported**
-- This alignment appears to be a general feature of the learning dynamics rather than a performance-differentiating factor
+- This alignment appears to be a general feature of the learning dynamics rather than a performance-differentiating factor. As we will unerstand later in this thesis, correlating input- and output-weights is a crucial strategy to solve the biological integration and memory tasks.
 
 ### 2. I-Participation Ratio vs Performance
 
-**Observation**: Green points show clustering around 305-342 with no clear linear or systematic relationship to performance:
-- Best performing models (performance < 0.020): I-part.ratio ranges from ~320 to ~331
-- Moderate performing models (0.020-0.030): I-part.ratio ranges from ~305 to ~330
-- Poor performing models (performance > 0.030): I-part.ratio ranges from ~312 to ~342
+**Observation**: 
+- Green points show clustering around 305-342 with no clear linear or systematic relationship to performance.
+- All networks converge to similar correlation values regardless of quality
+- This alignment appears to be a general feature of the dynamics rather than a performance-differentiating factor.
+
 
 **Interpretation**:
 - **No clear correlation between I-participation ratio and performance**
 - The wide range of I-part.ratio values (~305-342) suggests all networks use relatively high-dimensional input representations
-- Both high and low I-part.ratio values within this range can achieve good or poor performance
 - The distribution of input weights across principal components does not appear to be the primary determinant of task success
+- As we will unerstand later in this thesis, the dynamical solution for solving the biological integration and memory task does not rely on choosing input-vectors with certain properties. In fact, network performance for propotypes with random input-vectors and trained output-weights also perform reasonably well.
 
 ### 3. W-Participation Ratio vs Performance
 
 **Observation**: Red points cluster around 307-331 with substantial overlap across all performance levels:
-- Best performing models: W-part.ratio ranges from ~313 to ~327
-- Moderate performing models: W-part.ratio ranges from ~307 to ~322
-- Poor performing models: W-part.ratio ranges from ~309 to ~330
 
 **Interpretation**:
 - **No correlation between W-participation ratio and performance**
 - Output weights show similar high-dimensional structure across all networks
-- Multiple readout strategies within this range are equally viable
-- The structure of output weights is not predictive of task quality
+- As we will understand later in this tesis, the dynamical solution for solving the biological integration and memory relies on picking certain principal axes, which are crucial for interpreting input durations and achieving a plateau-shaped output. The weight distributions on the remaining principal axes is less significant.
 
 ## Statistical Summary
 
@@ -79,13 +78,6 @@ The scatter plot [`sys_A_performance.png`](https://github.com/lorenapuhl/Backeng
 - **Worst model**: ~0.042 (highest MSE)
 - **Range**: ~3.2× difference between best and worst
 
-### Correlation Analysis
-
-| Feature | Visual Correlation | Strength |
-|---------|-------------------|----------|
-| Weight Correlation | None (flat distribution) | None |
-| I-Participation Ratio | None (scattered distribution) | None |
-| W-Participation Ratio | None (scattered distribution) | None |
 
 ## Conclusions
 
