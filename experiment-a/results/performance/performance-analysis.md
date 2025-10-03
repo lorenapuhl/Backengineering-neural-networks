@@ -52,13 +52,11 @@ The scatter plot [`sys_A_performance.png`](https://github.com/lorenapuhl/Backeng
 **Observation**: 
 - Green points show clustering around 305-342 with no clear linear or systematic relationship to performance.
 - All networks converge to similar correlation values regardless of quality
-- This alignment appears to be a general feature of the dynamics rather than a performance-differentiating factor.
+- This alignment appears to be a general feature of the solution-dynamics rather than a performance-differentiating factor.
 
 
 **Interpretation**:
 - **No clear correlation between I-participation ratio and performance**
-- The wide range of I-part.ratio values (~305-342) suggests all networks use relatively high-dimensional input representations
-- The distribution of input weights across principal components does not appear to be the primary determinant of task success
 - As we will unerstand later in this thesis, the dynamical solution for solving the biological integration and memory task does not rely on choosing input-vectors with certain properties. In fact, network performance for propotypes with random input-vectors and trained output-weights also perform reasonably well.
 
 ### 3. W-Participation Ratio vs Performance
