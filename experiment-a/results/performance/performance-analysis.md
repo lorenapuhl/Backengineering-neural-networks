@@ -79,57 +79,10 @@ The scatter plot [`sys_A_performance.png`](https://github.com/lorenapuhl/Backeng
 
 ## Conclusions
 
-### Primary Finding
-**None of the measured architectural features (weight correlation, I-participation ratio, or W-participation ratio) show meaningful correlation with task performance.** 
+None of the measured architectural features (weight correlation, I-participation ratio, or W-participation ratio) show meaningful correlation with individual task performance. Thus, performance variation must arise from factors not measured here. 
 
-This surprising result suggests that:
-1. Performance differences arise from features not captured by these global metrics
-2. The network solution is robust to variations in these architectural properties
-3. More subtle or dynamical properties may be responsible for performance differences
+However, we found that all networks converge to similar weight correlations and show a high weight-distribution across principal components. These features appear to be part of the general dynamics to solve biological integration and memory tasks, rather than a performance-distinguishing factor. We will understand later in this thesis, that the high correlation between input- and output-weights is crucial for a successfully working network. Furthermore, training output-weights $\bathbf{W}$ rather focusses on finding certain principal axes crucial for integrating input-signals and exhibiting a plateau-shaped output. The disctribution across the remaining PC's is less significant. Lastly, it seems that such a solution can be found for any random vector $\bathbf{I}$. Indeed networks only trained on output-weights and random input-weights are also able to solve the task.
 
-### Mechanistic Insights
-
-1. **Universal Architectural Features**: 
-   - All networks converge to similar weight correlations (~0.82-0.89)
-   - All networks use high-dimensional representations (I-part.ratio ~305-342, W-part.ratio ~307-331)
-   - These appear to be general features of the learned solution
-
-2. **Hidden Performance Determinants**:
-   - Performance variation (3.2×) must arise from factors not measured here
-   - Possibilities include: fine-scale weight structure, dynamical properties, initial conditions, precise timing of neural responses
-
-3. **Robustness of Solution Space**:
-   - Multiple architectural configurations within the observed ranges lead to successful solutions
-   - The task may have a large basin of attraction in weight space
-
-### Implications for Network Design
-
-- **Random initialization still matters**: Despite similar architectures, performance varies 3.2× across seeds
-- **Global metrics insufficient**: Standard measures (correlation, participation ratios) don't predict quality
-- **Need for finer analysis**: Future work should examine:
-  - Temporal dynamics and trajectories
-  - Fine-scale weight structure
-  - Network response properties during specific task phases
-  - Higher-order statistical properties
-
-## Recommendations for Future Work
-
-1. **Dynamical analysis**: Examine neural trajectories during task execution to identify performance-critical dynamics
-2. **Weight substructure**: Analyze specific patterns within **I** and **W** rather than global statistics
-3. **Timing precision**: Measure temporal accuracy of integration and memory maintenance
-4. **Principal component analysis**: Investigate which specific PCs are engaged, not just how many
-5. **Perturbation studies**: Test sensitivity of high vs. low performers to weight perturbations
-6. **Alternative metrics**: Explore measures like effective dimensionality during task execution, separability of representations, or dynamical stability
-
-## Revised Hypotheses
-
-Given the null results for the original hypotheses:
-
-**Original Hypothesis (Not Supported)**: Networks that distribute input across multiple PCs perform better
-**Revised Hypothesis**: All successful networks use high-dimensional representations; performance differences arise from temporal precision or fine-scale weight organization
-
-**Original Hypothesis (Not Supported)**: I-W correlation predicts performance  
-**Revised Hypothesis**: I-W correlation is a universal feature of trained networks; other alignment properties (e.g., with specific task-relevant subspaces) may matter
 
 ## Data Access
 
