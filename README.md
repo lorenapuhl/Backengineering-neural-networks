@@ -91,9 +91,12 @@ This experiment trains RNNs where both input weights (**I**) and output weights 
 
 ### Future Experiments
 
-Additional experiments exploring alternative training configurations and network architectures will be added soon, including:
-- **Experiment-B**: Training with fixed output weights
-- **Experiment-C**: Alternative loss functions and task variations
+Additional experiments exploring alternative training configurations and analysis strategies will be added soon, including:
+- **Experiment-B**: Training only output-weights, while input-weights randonly initialized. Comparing performances with results of Experiment A. Visualising firing-rate trajectories in Principal Component - Space
+- **Experiment-C**: Training only output-weights, while input-weights are manually set along specific Principal Components.
+- **Experiment-D**: Training only input-weights, while output-weights are manually set along specific Principal Components. Furthermore, we also choose to set input-weights along specific axes to understand which initial conditions facilitate training.
+- **Experiment-E**: Experimenting with different network sizes and exloring their degrees of dynamical freedom. We analyze the eigenvalue spectra of their respective PC-spaces and participation ratios to define their degrees of computational freedom.
+- **Experiment-F**: Training only (randomly initialised) input-weights and comparing network performances between experiments A, B and F
 
 
 ## **4. Getting Started**
