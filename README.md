@@ -77,7 +77,7 @@ Ultimately, we attempted at consolidating our findings. We proposed an analytica
 ├── Thesis.pdf                   # Complete master's thesis document
 ├── experiment-a/                # Training both input (I) and output (W) weights
 │   ├── main.py                  # Training and analysis script
-│   ├── utils.py        # Network architecture and utilities
+│   ├── utils.py                 # Network architecture and utilities
 │   ├── requirements.txt         # Python dependencies
 │   ├── models/                  # Trained model weights
 │   └── results/                 # Training curves and performance analysis
