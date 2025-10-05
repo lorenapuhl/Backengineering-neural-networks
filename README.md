@@ -132,5 +132,3 @@ For comprehensive details on the theoretical background, methodology, results, a
 - **Author:** Lorena Puhl
 - **Email:** lorena.puhl@protonmail.com
 - **Institution:** ENS (École Normale Supérieure), Paris and the University of Heidelberg
-
-For further details, please refer to my [`thesis`](https://github.com/lorenapuhl/autofluorescence-in-microscopical-data/blob/main/thesis.pdf)
