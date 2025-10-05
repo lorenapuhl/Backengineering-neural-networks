@@ -126,6 +126,11 @@ python main.py
 
 For comprehensive details on the theoretical background, methodology, results, and discussion, please refer to [**Thesis.pdf**](https://github.com/lorenapuhl/Backengineering-neural-networks/blob/main/Thesis.pdf) included in this repository.
 
-## **6. Contact**
 
-lorena.puhl@protonmail.com
+## **6. Concact**
+
+- **Author:** Lorena Puhl
+- **Email:** lorena.puhl@protonmail.com
+- **Institution:** ENS (École Normale Supérieure), Paris and the University of Heidelberg
+
+For further details, please refer to my [`thesis`](https://github.com/lorenapuhl/autofluorescence-in-microscopical-data/blob/main/thesis.pdf)
