@@ -21,9 +21,21 @@ Understanding the neuronal firing-rate patterns of the brain poses a significant
 
 ### **2.1 Training a RNN**
 
-Let's very briefly dive into some of our project's proceedings using minimal physics jargon.
+Let's briefly dive into some of our project's proceedings using minimal physics jargon.
 
 We began by training a series of recurrent neural networks (RNNs) to address the biological integration and memory problem. In this task, the network receives constant input signals of varying durations. To succeed, the RNN must measure for how long the input was active (integration) and represent this information through a sustained output signal (memory). The amplitude (signal height) of the output encodes the duration of the corresponding input. Training consisted of adjusting both the input and output weights of the network.
+
+
+</p>
+
+<p align="center">
+    <img src="https://github.com/user-attachments/assets/e5bf54b5-c007-4948-bb09-916eb269716f" alt="data set" width="700">
+
+  <em>Figure 2: (Top) Visualization of neural integration and memory responses. An incoming signal is processed by integrating its duration, resulting in a sustained output whose amplitude encodes the length of the input. The prolonged activity of this response reflects the network’s memory behavior.
+
+(Bottom) Input signals of varying durations are processed (integrated) by a Recurrent Neural Network (RNN). The output's amplitude encodes the duration of each incoming signal. Three example input signals and their corresponding output responses are shown.</em>
+</p>
+
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/22ca8b96-d2f7-4dbe-af2f-ddc66c82608b" alt="data set" width="70%">
@@ -34,8 +46,9 @@ We began by training a series of recurrent neural networks (RNNs) to address the
 </p>
 
 <p align="center">
-  <em>Figure 2: (top) Data-set featuring integration and memory patterns. The figure illustrates input-signals of different durations. The according target-output is a constant signal encoding the according input-duration through its height. (bottom) An RNN's typical output after having been trained on such a data-set.</em>
+  <em>Figure 3: (top) Data-set featuring integration and memory patterns. The figure illustrates input-signals of different durations. The according target-output is a constant signal encoding the according input-duration through its height. (bottom) An RNN's typical output after having been trained on such a data-set.</em>
 </p>
+
 
 ### **2.2 Reverse-Engineering and Analysis**
 
@@ -48,7 +61,7 @@ We proceeded by visualising firing-rate trajectories in Principal Component-spac
 </p>
 
 <p align="center">
-  <em>Figure 3: Three different trajectories r(t) for inputs of durations 50ms (blue and cyan), 150ms (green and olive) and 300ms (red and magenta) in Principal Component Space.  
+  <em>Figure 4: Three different trajectories r(t) for inputs of durations 50ms (blue and cyan), 150ms (green and olive) and 300ms (red and magenta) in Principal Component Space.  
   (a) Time-frame where the input is turned on. The input-weights I are illustrated using a vector-arrow.  
   (b) Intrinsic phase, where the network processes the input before entering plateau-phase. The latter denotes the time-frame where the network exhibits a plateau-like output to mimic memory behaviour.  
   (c) Entire trajectory. Blue, green and red represent r(t) during the input-dominated and intrinsic phases. Cyan, magenta and olive are used once the curves enter the memory-period or plateau-phase, and are labelled as "memory".</em>
