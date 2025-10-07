@@ -31,9 +31,7 @@ We began by training a series of recurrent neural networks (RNNs) to address the
 <p align="center">
     <img src="https://github.com/user-attachments/assets/e5bf54b5-c007-4948-bb09-916eb269716f" alt="data set" width="700">
 
-  <em>Figure 2: (Top) Visualization of neural integration and memory responses. An incoming signal is processed by integrating its duration, resulting in a sustained output whose amplitude encodes the length of the input. The prolonged activity of this response reflects the network’s memory behavior.
-
-(Bottom) Input signals of varying durations are processed (integrated) by a Recurrent Neural Network (RNN). The output's amplitude encodes the duration of each incoming signal. Three example input signals and their corresponding output responses are shown.</em>
+  <em>Figure 2: (top) Visualization of neural integration and memory responses. An incoming signal is processed by integrating its duration, resulting in a sustained output whose amplitude encodes the length of the input. The prolonged activity of this response reflects the network’s memory behavior. (bottom) Input signals of varying durations are processed (integrated) by a Recurrent Neural Network (RNN). The output's amplitude encodes the duration of each incoming signal. Three example input signals and their corresponding output responses are shown.</em>
 </p>
 
 
